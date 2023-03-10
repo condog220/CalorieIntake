@@ -59,7 +59,7 @@ namespace CalorieIntake
 
         public void WriteToFile()
         {
-            StreamWriter file = new StreamWriter("C:\\Users\\conno\\source\\repos\\CalorieIntake\\CalorieIntake\\data.txt");
+            StreamWriter file = new StreamWriter("data.txt");
 
             file.WriteLine(DateTime.Now);
             file.WriteLine(label3.Text);
@@ -75,9 +75,34 @@ namespace CalorieIntake
 
         private void button3_Click(object sender, EventArgs e)
         {
-            StreamWriter file = new StreamWriter("C:\\Users\\conno\\source\\repos\\CalorieIntake\\CalorieIntake\\data.txt");
+            StreamWriter file = new StreamWriter("data.txt");
             file.WriteLine(string.Empty);
             file.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int amount = int.Parse(textBox3.Text);
+            label1.Text = amount.ToString();
+            EnableScreen();
+
+        }
+
+        private void EnableScreen()
+        {
+            Name.Visible = true;
+            textBox1.Visible = true;
+            label4.Visible = true;
+            textBox2.Visible = true;
+            button1.Visible = true;
+            button2.Visible = true;
+            button3.Visible = true;
+            label2.Visible = true;
+            label1.Visible = true;
+
+            label5.Visible = false;
+            textBox3.Visible = false;
+            button4.Visible = false;
         }
     }
 }
